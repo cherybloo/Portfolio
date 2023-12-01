@@ -1,0 +1,49 @@
+When DEBUG = FALSE
+we could do the following:
+1. pip install whitenoise
+2. add it into settings.py in INSTALLED_APPS & MIDDLEWARE
+
+INSTALLED_APPS = whitenoise.runserver_nostatic
+MIDDLEWARE = whitenoise.middleware.WhiteNoiseMiddleware
+
+3. Setting up the static files.
+We could do the following:
+########################################################
+(A) STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR, 'assets'
+]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+########################################################
+OR
+########################################################
+(B) STATIC_URL = 'static/'
+if DEBUG:
+    STATIC_DIRS = [os.path.join(BASE_DIR,'static')]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+########################################################
+4. Don't forget to update the urls.py
+with the following command:
+
+from django.contrib import admin
+from django.urls import path, include, re_path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns # this is for "static" files
+from django.conf import settings # import everything from the settings file (settings.py)
+from django.conf.urls.static import static # this is for "media" files
+from . import views
+from django.views.static import serve
+
+5. If we use the (A) method in number 3 then it
+means we need to execute the following command, since
+STATIC_ROOT and STATIC DIRS are not the same:
+python3 manage.py collectstatic
+
+6. Add the following line in the urls.py:
+urlpatterns += [   
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+]

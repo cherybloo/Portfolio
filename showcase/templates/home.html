@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block style %}
+<link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+    integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" 
+/>
+<link href="{% static 'styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<!--<div class="center">
+    <h1>Laurencio Michael Susanto</h1>
+    <p>Welcome to my website!</p>
+</div>
+<br>
+
+<div class="center">
+    {% for project in projects %}
+        <img src="{{project.thumbnail.url}}" height="150">
+        <h3> {{ project.title }}</h3>
+        <h5> {{ project.body }}</h5>
+        <a href="admin">Testing</a>
+    {% endfor %}
+</div>-->
+<header>
+    <div class="navbar">
+        <div class="logo"><a href="/">Laurencio</a></div>
+        <ul class="links">
+            <li><a href="about/">~about</a></li>
+            <li><a href="admin/">~admin</a></li>
+            <li><a href="contact/">~contact</a></li>
+        </ul>
+
+        <div class="toggle_btn">
+            <i class="fa-solid fa-ellipsis-vertical" style="color: #ffffff;"></i>
+        </div>
+    </div>
+
+    <div class="dropdown_menu">
+        <li><a href="about/">~about</a></li>
+        <li><a href="admin/">~admin</a></li>
+        <li><a href="contact/">~contact</a></li>
+    </div>
+
+    <div class="center">
+        {% for project in projects %}
+            <img src="{{project.thumbnail.url}}" height="150">
+            <h3> {{ project.title }}</h3>
+            <h5> {{ project.body }}</h5>
+        {% endfor %}
+    </div>
+    <script src="{% static 'dropdown.js'%}"></script>
+</header>
+
+{% endblock %}
