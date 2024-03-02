@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container-fluid">
+        <section id="intro">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="project-quote">
+			<a href="/">HOME</a>
+			<br><br>
+			<a href="#contacts">CONTACTS</a>
+			<br><br>
+                        <a href="#project-main"><i>{{ projects.1.body }}</i></a>
+                        <br><br>
+                        <hr><hr>
+                    </div>
+                    <div class="laurencio-michael-susanto">
+                        HAND
+                        <br />
+                        SIGN
+                        <br />
+                        TRANSLATOR
+                    </div>
+                </div>
+                <div class="col-sm-4" id="poster">
+                    <img src="{{ projects.1.thumbnail.url }}">
+                </div>
+            </div>
+
+            <div class="row">
+                <a href="#project-main" style="text-align: center;" onclick='$("#about")'>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="5vw" fill="#ffff9c" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/>
+                    </svg>
+                </a>
+            </div>
+            <br>
+        </section>
+
+        <section id="project-main">
+            <div class="row">
+                <p>
+                    In my pursuit of learning machine learning and artificial intelligence, I initiated a project aimed at assisting individuals with hearing impairments. The primary challenge was figuring out how to train my model using Python. While exploring TensorFlow and PyTorch frameworks through online tutorials, I encountered a setback, since my laptop lacked the necessary specifications for model training. Undeterred, I pivoted to leverage cloud computing resources, opting for Google Colab.
+                </p>
+                <p>
+                    Setting up the project on Google Colab proved remarkably straightforward. I successfully trained several simple models after overcoming initial debugging challenges and intensive coding. The culmination of my efforts resulted in the creation of 10 distinct hand signs, including okay, peace, thumbs up, thumbs down, call me, stop, rock, live long, fist, and smile.
+                </p>
+                <p>
+                    Post-training, I organized the models into a cohesive file, enabling broader accessibility. Additionally, I crafted a Python script that showcases the models' capabilities, utilizing computer vision to detect hands and interpret their movements. This project not only addresses a real-world issue but also provides a practical demonstration of machine learning in action.
+                </p>
+                <p>All of the code could be found at my github repository: <a href="https://github.com/cherybloo/Hand-Sign-Translator" target="_blank">https://github.com/cherybloo/Hand-Sign-Translator</a></p>
+            </div>
+        </section>
+    </div>
+{% endblock %}

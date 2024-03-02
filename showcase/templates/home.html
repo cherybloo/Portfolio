@@ -1,59 +1,130 @@
 {% extends "layout.html" %}
 {% load static %}
 {% block style %}
-<link 
-    rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
-    integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" 
-    crossorigin="anonymous" 
-    referrerpolicy="no-referrer" 
-/>
-<link href="{% static 'styles.css' %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'styles.css' %}"/>
+    <script src="{% static 'main.js' %}"></script>
 {% endblock %}
-
 {% block body %}
-<!--<div class="center">
-    <h1>Laurencio Michael Susanto</h1>
-    <p>Welcome to my website!</p>
-</div>
-<br>
+<div class="container-fluid">
 
-<div class="center">
-    {% for project in projects %}
-        <img src="{{project.thumbnail.url}}" height="150">
-        <h3> {{ project.title }}</h3>
-        <h5> {{ project.body }}</h5>
-        <a href="admin">Testing</a>
-    {% endfor %}
-</div>-->
-<header>
-    <div class="navbar">
-        <div class="logo"><a href="/">Laurencio</a></div>
-        <ul class="links">
-            <li><a href="about/">~about</a></li>
-            <li><a href="admin/">~admin</a></li>
-            <li><a href="contact/">~contact</a></li>
-        </ul>
+        <section id="intro">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="home-about-projects">
+                        <a href="resume.pdf">RESUME</a>
+                        <br><br><br>
+                        <a href="#projects">PROJECTS</a>
+                        <br><br><br>
+                        <a href="#contacts" id="visitors">CONTACTS</a>
+                        <hr><hr>
+                    </div>
+                    <div class="laurencio-michael-susanto">
+                        LAURENCIO
+                        <br />
+                        MICHAEL
+                        <br />
+                        SUSANTO
+                    </div>
+                </div>
+                <div class="col-sm-4" id="poster">
+                    <img src="media/Laurencio-Photo.jpg">
+                </div>
+            </div>
 
-        <div class="toggle_btn">
-            <i class="fa-solid fa-ellipsis-vertical" style="color: #ffffff;"></i>
-        </div>
+            <div class="row">
+                <a href="#about" style="text-align: center;" onclick='$("#about")'>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="5vw" fill="#ffff9c" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/>
+                    </svg>
+                </a>
+            </div>
+            <br>
+        </section>
+        
+        <section id="about">
+            <div class="row" style="padding: var(--overall-padding); ">
+                <div class="col-sm-4" id="about-me-title">
+                    ABOUT ME
+                </div>
+                <div class="col-sm-8" id="about-me-content">
+                    <p>I'm a Computer Science student at RPTU Kaiserslautern with a lot of  experience in:</p>
+                    <div class="row" id="about-me-icons">
+                        <div class="col-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-laptop" viewBox="0 0 16 16">
+                                <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"/>
+                            </svg>
+                            <br>
+                            Web-Development
+                        </div>
+                        <div class="col-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-database-fill" viewBox="0 0 16 16">
+                                <path d="M3.904 1.777C4.978 1.289 6.427 1 8 1s3.022.289 4.096.777C13.125 2.245 14 2.993 14 4s-.875 1.755-1.904 2.223C11.022 6.711 9.573 7 8 7s-3.022-.289-4.096-.777C2.875 5.755 2 5.007 2 4s.875-1.755 1.904-2.223"/>
+                                <path d="M2 6.161V7c0 1.007.875 1.755 1.904 2.223C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777C13.125 8.755 14 8.007 14 7v-.839c-.457.432-1.004.751-1.49.972C11.278 7.693 9.682 8 8 8s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"/>
+                                <path d="M2 9.161V10c0 1.007.875 1.755 1.904 2.223C4.978 12.711 6.427 13 8 13s3.022-.289 4.096-.777C13.125 11.755 14 11.007 14 10v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"/>
+                                <path d="M2 12.161V13c0 1.007.875 1.755 1.904 2.223C4.978 15.711 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972"/>
+                            </svg>
+                            <br>
+                            Database
+                        </div>
+                        <div class="col-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-cloudy" viewBox="0 0 16 16">
+                                <path d="M13.405 8.527a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 14.5H13a3 3 0 0 0 .405-5.973M8.5 5.5a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1-.001 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4 4 0 0 1 8.5 5.5"/>
+                            </svg>
+                            <br>
+                            Cloud-Infrastructure
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="row">
+                <div class="col-sm" id="projects-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="5vw" height="5vw" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+                    </svg>
+                    PROJECTS
+                    <svg xmlns="http://www.w3.org/2000/svg" width="5vw" height="5vw" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+                    </svg>
+                </div>
+                
+            </div>
+            <br>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <a target="_blank" class="card" id="projects-cards" href="https://youtu.be/aTPNDaDp93o?si=mbNzpRzhE2mvsd8v">
+                        <img src="{{ projects.0.thumbnail.url }}" class="card-img-top" alt="First Project">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ projects.0.title }}</h5>
+                            <p class="card-text">{{ projects.0.body }}</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="card" id="projects-cards" href="/project2">
+                    <img src="{{ projects.1.thumbnail.url }}" class="card-img-top" alt="Second Project">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ projects.1.title }}</h5>
+                            <p class="card-text">{{ projects.1.body }}</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="card" id="projects-cards" href="project3">
+                    <img src="{{ projects.2.thumbnail.url }}" class="card-img-top" alt="Third Project">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ projects.2.title }}</h5>
+                            <p class="card-text">{{ projects.2.body }}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
     </div>
-
-    <div class="dropdown_menu">
-        <li><a href="about/">~about</a></li>
-        <li><a href="admin/">~admin</a></li>
-        <li><a href="contact/">~contact</a></li>
-    </div>
-
-    <div class="center">
-        {% for project in projects %}
-            <img src="{{project.thumbnail.url}}" height="150">
-            <h3> {{ project.title }}</h3>
-            <h5> {{ project.body }}</h5>
-        {% endfor %}
-    </div>
-    <script src="{% static 'dropdown.js'%}"></script>
-</header>
 
 {% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container-fluid">
+        <section id="intro">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="project-quote">
+			<a href="/">HOME</a>
+			<br><br>
+			<a href="#contacts">CONTACTS</a>
+			<br><br>
+                        <a href="#project-main"><i> {{ projects.2.body }}</i></a>
+                        <br><br>
+                        <hr><hr>
+                    </div>
+                    <div class="laurencio-michael-susanto">
+			{{ projects.2.title }}
+                    </div>
+                </div>
+                <div class="col-sm-4" id="poster">
+                    <img src="{{ projects.2.thumbnail.url }}">
+                </div>
+            </div>
+
+            <div class="row">
+                <a href="#project-main" style="text-align: center;" onclick='$("#about")'>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="5vw" fill="#ffff9c" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/>
+                    </svg>
+                </a>
+            </div>
+            <br>
+        </section>
+
+        <section id="project-main">
+            <div class="row">
+                <p>
+		After a whole week of locking myself in my room to create a fully working HTTP API with Python and Node.JS. I could use this
+		interactive web application and give a bunch of my friends a try out and they freaked out! Well eventually they spammed and crashed the web server,
+		but after some iteration I make it a bit better. now I made the API to receive only 1 request. 
+        	</p>
+                <p>All of the code could be found at my github repository: <a href="https://github.com/cherybloo/Youtu-bee" target="_blank">https://github.com/cherybloo/Youtu-bee</a></p>
+            </div>
+        </section>
+    </div>
+{% endblock %}

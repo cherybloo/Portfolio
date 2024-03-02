@@ -4,4 +4,12 @@ from .models import Project
 
 def home(request):
     projects = Project.objects.all()
-    return render(request,"home.html",{'projects':projects})
+    return render(request,"home.html",{'projects':list(projects)})
+
+def project2(request):
+    projects = Project.objects.all()
+    return render(request,"project2.html",{'projects':list(projects)})
+
+def project3(request):
+    projects = Project.objects.all()
+    return render(request,"project3.html",{'projects':list(projects)})
